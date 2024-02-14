@@ -3,6 +3,15 @@ body{
     padding: 0;
     
 }
+
+button{
+    padding: 13px;
+    border-radius: 10px;
+    border: none;
+    width: 8%;
+    justify-self: end;
+    margin:0 60px;
+}
 /* css del contenedor del loader */
 .container-loader{
     height: 100vh;
@@ -62,7 +71,7 @@ section:nth-child(1){
     place-items: center;
     position: relative;
     overflow-x: clip;
-    padding-block: 7rem;
+    padding-block: 2rem;
     background-color: black;
     z-index: 1;
 }
@@ -73,7 +82,7 @@ section:nth-child(1){
     position: fixed;
     top: 0;
     z-index: 1000;
-    background-color: lime;
+    background-color: rgb(255, 238, 0);
     width: 100%;
     scale: 0 1;
     transform-origin: left;
@@ -84,6 +93,7 @@ section:nth-child(1){
 @keyframes scroll-watcher {
     to{scale: 1 1;}
 }
+
 #llama{
     animation: llama 1s infinite;
 }
@@ -233,6 +243,7 @@ section:nth-child(3){
     grid-template-columns: 1fr 2fr;
     justify-items: center;
     align-items: center;
+   
 }
 
 .video-content{
@@ -313,16 +324,19 @@ section:nth-child(4){
     height: 40%;   
 }
 
-#img1:hover{
-    animation: shrink 1.5s 1 normal;
+#img:hover{
+    animation: shrink 3s 1 normal;
 }
-#img2:hover{
+@keyframes shrink {
+    50%{transform: scale(0.5, 0.5);}
+}
+/* #imglo:hover{
     animation: rotate 1.5s 1 normal;
 }
-#img3:hover{
+#imgk:hover{
     animation: grow 1.5s 1 reverse;
 }
-#img4:hover{
+#imgi:hover{
     animation: rotateScale 2s 1 normal;
 }
 #img5:hover{
@@ -330,9 +344,9 @@ section:nth-child(4){
 }
 #img6:hover{
     animation: slideDown 3s 1 normal;
-}
+} */
 
-@keyframes slideRight {
+/* @keyframes slideRight {
     to{transform: translateX(300%);}
 }
 @keyframes rotate {
@@ -340,9 +354,6 @@ section:nth-child(4){
 }
 @keyframes grow {
     100%{transform: scale(2,2);}
-}
-@keyframes shrink {
-    50%{transform: scale(0.5, 0.5);}
 }
 @keyframes rotateScale {
    from{
@@ -353,6 +364,11 @@ section:nth-child(4){
 @keyframes slideDown {
     to{transform: translateY(300%);}
 }
+ */
 
-
+@media (prefers-reduced-motion: reduce) {
+    #img:hover{
+        animation: none;
+    }
+}
 

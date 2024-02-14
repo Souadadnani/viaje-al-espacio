@@ -7,16 +7,18 @@
     <link rel="stylesheet" href="https://fonts.google.com/specimen/Genos?query=genos">
     <link rel="stylesheet" href="https://fonts.google.com/specimen/Fredericka+the+Great?stroke=Serif">
     <link rel="stylesheet" href="https://fonts.google.com/?query=Orbitron&stroke=Sans+Serif">
+    <script defer src="/js/accesibility.js"></script>
     <title>Viaje al espacio</title>
 </head>
 <body>
     
-    <div class="container-loader">   
+    <div aria-labelledby="loader" class="container-loader">   
         <div id="loader"></div> 
     </div>
-    <div class="scroll-watcher"></div> 
+    <div class="scroll-watcher" id="barra-scroll"></div> 
     <div class="scroller">
         <section>
+            <button id="pausar">Pausar Animaciones</button>
             <svg class="fondo"
    width="210mm"
    height="297mm"
@@ -4356,19 +4358,19 @@
                 </audio>
             </div>
         </section>
-        <section>
+        <section tabindex="0">
             <h2>Explorando el Cosmos: Una Galería Celestial</h2>
-            <div class="slider-container">
+            <div role="slider" class="slider-container">
                 <ul>
-                    <li><img src="imagenes/galaxy-3468.gif"/></li>
-                    <li><img src="imagenes/moon.jpg"/></li>
-                    <li><img src="imagenes/astronaut.jpg"/></li>
-                    <li><img id="imgPlanetas" src="imagenes/planet-8215532_1280.png"/></li>
-                    <li><img src="imagenes/earth-6102.gif"></li>
+                    <li><img src="imagenes/galaxy-3468.gif" alt="Gif Galaxia"/></li>
+                    <li><img src="imagenes/moon.jpg" alt="Luna"/></li>
+                    <li><img src="imagenes/astronaut.jpg" alt="Astronauta"></li>
+                    <li><img id="imgPlanetas" src="imagenes/planet-8215532_1280.png" alt="Planetas"/></li>
+                    <li><img src="imagenes/earth-6102.gif" alt="Giro de Tierra y Luna"></li>
                 </ul>
             </div>          
         </section>
-        <section>
+        <section tabindex="0">
             <h2 id="section3-title">Maravillas Cósmicas</h2>
             <div class="cosmicas">
                 <div class="video-content">
@@ -4382,26 +4384,26 @@
                             <source src="videos/pexels-zch-12722063 (360p).mp4" type="video/mp4">
                             <source src="videos/pexels-zch-12722063 (360p).ogv" type="video/ogv">
                             <source src="videos/pexels-zch-12722063 (360p).webm" type="video/webm">
-                            El navegador no soporta el elemento de video.
+                            El navegador no suporta el elemento de video.
                         </video>
                     </div> 
                 </div>  
             </div>
                        
         </section>
-        <section>   
-            <div class="space">
+        <section tabindex="0">   
+            <div aria-label="galeria de imagenes desde el espacio" tabindex="0" class="space">
                 <div class="col">
-                    <div id="img1"><img src="imagenes/moon-3182407_1280.jpg" alt=""></div>
-                    <div id="img2"><img src="imagenes/astronaut-11050_1280.jpg" alt=""></div>                   
+                    <div id="img"><img tabindex="0" src="imagenes/moon-3182407_1280.jpg" alt="Luna"></div>
+                    <div id="img"><img tabindex="0" src="imagenes/astronaut-11050_1280.jpg" alt="Astronauta"></div>                   
                 </div>
                 <div class="col">
-                    <div id="img3"><img src="imagenes/saturn-54999_640.jpg" alt=""></div>
-                    <div id="img4"><img src="imagenes/space-suit-2539247_1280.jpg" alt=""></div>
+                    <div id="img"><img tabindex="0" src="imagenes/saturn-54999_640.jpg" alt="Saturno"></div>
+                    <div id="img"><img tabindex="0" src="imagenes/space-suit-2539247_1280.jpg" alt="Espacio"></div>
                 </div>
                 <div class="col">
-                    <div id="img5"><img src="imagenes/universe-1057270_1280 (1).jpg" alt=""></div>
-                    <div id="img6"><img src="imagenes/universe.jpg" alt=""></div>
+                    <div id="img"><img tabindex="0" src="imagenes/universe-1057270_1280 (1).jpg" alt="Universo"></div>
+                    <div id="img"><img tabindex="0" src="imagenes/universe.jpg" alt="Universo"></div>
                 </div>
             </div>                  
         </section>
