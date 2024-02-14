@@ -1,0 +1,358 @@
+body{
+    margin: 0;
+    padding: 0;
+    
+}
+/* css del contenedor del loader */
+.container-loader{
+    height: 100vh;
+    width: 100%;
+    z-index: 4;
+    position: absolute;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: terminar 2s linear forwards;
+}
+.container-loader{
+    -moz-animation-fill-mode: forwards;
+}
+
+@keyframes terminar {
+    from{opacity: 1;}
+    to{opacity: 1; display: none;}
+}
+
+#loader{
+    width: 60px;
+    aspect-ratio: 1;
+    background-color: hsla(36, 4%, 26%, 0.492);
+    border-radius: 50%;
+    animation: loader 3s infinite;
+}
+
+@keyframes loader {
+    12.5% {background-image:radial-gradient(80% 65% at left, #0000 94%,#fff9)}
+    25%   {background-image:linear-gradient(90deg,#0000 50%,#fff9 0)}
+    37.5% {background-image:radial-gradient(80% 65% at right,#fff9 94%,#0000)}
+    50%   {background-image:linear-gradient(#fff9 0 0)}
+    62.5% {background-image:radial-gradient(80% 65% at left, #fff9 94%,#0000)}
+    75%   {background-image:linear-gradient(-90deg,#0000 50%,#fff9 0)}
+    87.5% {background-image:radial-gradient(80% 65% at right,#0000 94%,#fff9)}
+}
+/* fin del estilo de loader */
+
+.scroller{
+z-index: 1;
+width: 100%;
+height: 100vh;
+position: relative;
+}
+
+section{
+height: 100vh;
+width: 100vw;
+scroll-snap-align: center;
+position: relative;
+
+}
+section:nth-child(1){
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow-x: clip;
+    padding-block: 7rem;
+    background-color: black;
+    z-index: 1;
+}
+
+/* Barra de carga al hacer scroll */
+.scroll-watcher{
+    height: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: lime;
+    width: 100%;
+    scale: 0 1;
+    transform-origin: left;
+    animation: scroll-watcher linear;
+    animation-timeline: scroll();
+}
+
+@keyframes scroll-watcher {
+    to{scale: 1 1;}
+}
+#llama{
+    animation: llama 1s infinite;
+}
+@keyframes llama {
+    0%{opacity: 0.1;}
+    100%{opacity: 1; transform: rotate(0.8deg);}
+}
+.fondo{
+    width: 100%;
+    height: 100%;
+}
+
+#star, #luna{
+   animation: brillar 1.2s linear infinite;
+}
+
+@keyframes brillar {
+    from{opacity: 0.2;}
+    to{opacity: 1;}
+}
+
+.astronauta{
+    grid-column: 1 / 1;
+    position: absolute;
+    inset: 0;
+    width: 65%;
+    height: 65%;
+    opacity: 1;
+    object-fit: cover;
+    z-index: -1;
+    animation: nudge 3s cubic-bezier(0.01, 0.95, 0.74,-0.18) 2s 1 forwards; 
+}
+
+@keyframes nudge {
+    0%{transform: translate(-500px, 200px);}
+    50% {transform: translate(350px, 20px);}
+    100% {transform: translate(700px, 40px);}
+}
+
+h1{
+    position: absolute;
+    font-size: 4.5em;
+    color:  rgb(243, 237, 146);;
+    transform: translate(-25%, -80%);
+    opacity: 0;
+    animation: fadeIn 3s linear 3.2s forwards;
+    z-index: -1;
+    font-family: 'Fredericka the Great', serif;
+}
+@keyframes fadeIn {
+    to { opacity: 1;}
+}
+
+.audio{
+    justify-self: start;
+    z-index: -1; 
+    margin-left: 30px;  
+    transition: box-shadow 2.5s ease-out;
+    border-radius: 30px;
+    width: auto;
+    background-color: aliceblue;
+    border: 4px solid rgb(122, 71, 198);
+}
+.audio:hover{
+    box-shadow: 0px 0px 50px rgba(238, 255, 7, 0.991);
+}
+
+/* css segunda section */
+section:nth-child(2){
+    background-color: rgba(4, 4, 42, 0.945);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h2{
+    margin: 0;
+    padding: 3% 0;
+    font-size: 3em;
+    color: rgba(255, 135, 95, 0.737);
+    font-family: 'genos', sans-serif;
+}
+
+.slider-container {    
+    width: 50%;
+    height: 60vh;
+    box-shadow: 0 0.5rem 3rem -0.2rem  hsl(218, 85%, 48%);    
+    border-radius: 20px;
+    overflow: hidden;
+} 
+.slider-container img { 
+    object-fit: cover;   
+    border-radius: 20px;
+    width: 100%;
+    height: 50%;
+}
+ul{        
+    display: flex;
+    width: 500%;
+    margin: 0;
+    padding: 0;
+    animation: slider 18s ease-in infinite alternate;
+}
+li{
+   list-style: none; 
+   width: 100%;
+}
+
+#imgPlanetas{
+    height: 88%;
+}
+@keyframes slider {
+    0%{margin-left: 0;}
+    16%{margin-left: 0;}
+
+    25%{margin-left: -100%;}
+    36%{margin-left:-100%;}
+
+    40%{margin-left: -200%;}
+    56%{margin-left: -200%;}
+
+    60%{margin-left: -300%;}
+    70%{margin-left: -300%;}
+
+    80%{margin-left: -400%;}
+    100%{margin-left: -400%;}
+}
+
+section:nth-child(3){
+    background-color:rgb(100, 120, 150);
+    animation: aparicion linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 30%;
+}
+@keyframes aparicion {
+    from{
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+.cosmicas{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.video-content{
+    align-self: start;
+    padding: 20px 0 0 40px;
+    justify-self: center;
+    width: 67%;    
+}
+.video-container{
+    justify-self: center;
+    align-self: end;
+    padding: 3% 1%;
+    margin-top: 135px;
+}
+
+video{
+    transition: box-shadow 2s ease-out;
+}
+
+.box-video:hover{
+    width: auto;
+    height: auto;
+    box-shadow: 0px 0px 50px rgba(238, 255, 0, 0.991);
+}
+
+#section3-title{
+    text-align: center;
+    color: rgb(243, 237, 146);
+}
+
+p{
+    text-align: justify;
+    font-size: 1.25em;
+    color: bisque;
+    opacity: 0.4;
+    transition: opacity 2s ease-in;
+    font-family: 'Orbitron', sans-serif;
+}
+p:hover{
+    opacity: 1;
+    color: rgb(245, 216, 136);
+    font-size: 1.5em;
+}
+
+section:nth-child(4){
+    background-color: rgb(170, 100, 80);
+    animation: aparicion linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 30%;
+}
+
+.space{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+.space img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+.space img{
+    -webkit-border-image-width: 5px;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    height: 100vh;
+}
+.col div{
+    padding-top: 50px;
+    width: 70%;
+    height: 40%;   
+}
+
+#img1:hover{
+    animation: shrink 1.5s 1 normal;
+}
+#img2:hover{
+    animation: rotate 1.5s 1 normal;
+}
+#img3:hover{
+    animation: grow 1.5s 1 reverse;
+}
+#img4:hover{
+    animation: rotateScale 2s 1 normal;
+}
+#img5:hover{
+    animation: slideRight 3s 1 normal;
+}
+#img6:hover{
+    animation: slideDown 3s 1 normal;
+}
+
+@keyframes slideRight {
+    to{transform: translateX(300%);}
+}
+@keyframes rotate {
+    50%{transform: rotateZ(300deg);}
+}
+@keyframes grow {
+    100%{transform: scale(2,2);}
+}
+@keyframes shrink {
+    50%{transform: scale(0.5, 0.5);}
+}
+@keyframes rotateScale {
+   from{
+    transform: rotate(0deg) scale(1);
+   }
+    to{transform: rotate(360deg) scale(0);}
+}
+@keyframes slideDown {
+    to{transform: translateY(300%);}
+}
+
+
+
