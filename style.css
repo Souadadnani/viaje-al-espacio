@@ -201,6 +201,37 @@ li{
    list-style: none; 
    width: 100%;
 }
+/* enlaces de slider */
+ul.slider li:first-child {
+    opacity: 1; /*Mostramos el primer <li>*/
+}
+
+ul.slider li:target {
+    opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
+}
+
+.menu{
+  text-align: center;
+  margin: 20px;
+}
+
+.menu li{
+  display: inline-block;
+  text-align: center;
+}
+
+.menu li a{
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  background-color: grey;
+  padding: 10px;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  border-radius: 100%;
+}
+/* fin enlaces slider */
 
 #imgPlanetas{
     height: 88%;
@@ -330,44 +361,29 @@ section:nth-child(4){
 @keyframes shrink {
     50%{transform: scale(0.5, 0.5);}
 }
-/* #imglo:hover{
-    animation: rotate 1.5s 1 normal;
-}
-#imgk:hover{
-    animation: grow 1.5s 1 reverse;
-}
-#imgi:hover{
-    animation: rotateScale 2s 1 normal;
-}
-#img5:hover{
-    animation: slideRight 3s 1 normal;
-}
-#img6:hover{
-    animation: slideDown 3s 1 normal;
-} */
 
-/* @keyframes slideRight {
-    to{transform: translateX(300%);}
-}
-@keyframes rotate {
-    50%{transform: rotateZ(300deg);}
-}
-@keyframes grow {
-    100%{transform: scale(2,2);}
-}
-@keyframes rotateScale {
-   from{
-    transform: rotate(0deg) scale(1);
-   }
-    to{transform: rotate(360deg) scale(0);}
-}
-@keyframes slideDown {
-    to{transform: translateY(300%);}
-}
- */
 
 @media (prefers-reduced-motion: reduce) {
+    #loader{
+        animation: none;
+        background-color: #fff9;
+    }
     #img:hover{
+        animation: none;
+    }
+    .scroll-watcher{
+        animation: none;
+    }
+    #llama{
+        animation: llama 1s forwards;
+    }
+    #star, #luna{
+        animation: brillar 1.2s linear forwards;
+    }
+    .astronauta, h1{
+        animation-delay: -1s;
+    }
+    ul{
         animation: none;
     }
 }
