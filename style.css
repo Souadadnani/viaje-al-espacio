@@ -176,7 +176,12 @@ h2{
     color: rgba(255, 135, 95, 0.737);
     font-family: 'genos', sans-serif;
 }
-
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
 .slider-container {    
     width: 50%;
     height: 60vh;
@@ -201,40 +206,12 @@ li{
    list-style: none; 
    width: 100%;
 }
-/* enlaces de slider */
-ul.slider li:first-child {
-    opacity: 1; /*Mostramos el primer <li>*/
-}
-
-ul.slider li:target {
-    opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
-}
-
-.menu{
-  text-align: center;
-  margin: 20px;
-}
-
-.menu li{
-  display: inline-block;
-  text-align: center;
-}
-
-.menu li a{
-  display: inline-block;
-  color: white;
-  text-decoration: none;
-  background-color: grey;
-  padding: 10px;
-  width: 20px;
-  height: 20px;
-  font-size: 20px;
-  border-radius: 100%;
-}
-/* fin enlaces slider */
 
 #imgPlanetas{
     height: 88%;
+}
+.menu{
+    display: none;
 }
 @keyframes slider {
     0%{margin-left: 0;}
@@ -274,7 +251,7 @@ section:nth-child(3){
     grid-template-columns: 1fr 2fr;
     justify-items: center;
     align-items: center;
-   
+    position: absolute;
 }
 
 .video-content{
@@ -386,5 +363,45 @@ section:nth-child(4){
     ul{
         animation: none;
     }
+   
+    /* enlaces de slider */
+   
+    .slider ul li:first-child {
+        opacity: 1; /*Mostramos el primer <li>*/
+    }
+
+    .slider ul li:target {
+        opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
+    }
+
+    .menu{
+        text-align: center;
+        margin: 20px;
+        width: 232px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .menu li{
+        display: inline-block;
+        text-align: center;
+    }
+
+    .menu li a{
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+        background-color: rgba(255, 135, 95, 0.737);
+        padding: 10px;
+        width: 20px;
+        height: 20px;
+        font-size: 20px;
+        border-radius: 100%;
+    }
+    /* fin enlaces slider */
+    
+
 }
 
