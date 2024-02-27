@@ -46,7 +46,7 @@ function pausarAnimaciones() {
     const imagenes = document.querySelectorAll(".slider img");
     imagenes.forEach((element)=>{
         if(element.src.includes("gif")){
-            element.src =  "imagenes/universe-1057270_1280 (1).jpg";
+            element.src =  "imagenes/sinanimacion.jpg";
             element.alt = "universo";
         }
     });
@@ -90,6 +90,14 @@ function playAnimations() {
     document.querySelector(".box-video").classList.toggle("video-shadow");
     document.querySelector("p").classList.toggle("p-sin-hover");
     document.querySelector(".menu").classList.toggle("ocultar");
+
+    const imagenes = document.querySelectorAll(".slider img");
+    imagenes.forEach((element)=>{
+        if(element.src.includes("sinanimacion")){
+            element.src =  "imagenes/earth-6102.gif";
+            element.alt = "Giro de Tierra y Luna";
+        }
+    });
 }
 
 
